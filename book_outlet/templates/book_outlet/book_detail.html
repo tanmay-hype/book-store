@@ -1,0 +1,18 @@
+{% extends 'book_outlet/base.html' %}
+
+{% block title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ book.title }}</h1>
+    <h2>Author: {{ book.author }}</h2>
+    <p>Rating: {{ book.rating }} 
+        <br>
+        {% if book.is_bestseller %}
+            <strong>(Bestseller!)</strong>
+        {% else %}
+            <em>(Not a bestseller)</em>
+        {% endif %}
+    </p>
+{% endblock %}
