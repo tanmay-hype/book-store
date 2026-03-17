@@ -10,9 +10,13 @@
             {% for book in books %}
                 <li> 
                    
-                    {{ book.title }} by {{ book.author }} (Rating: {{ book.rating }})
+                    <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> by {{ book.author }} (Rating: {{ book.rating }})
                
             </li>
             {% endfor %}
     </ul>
+
+    <hr>
+    <p>Total number of books: {{ total_number_of_books }}</p>
+    <p>Average rating: {{ avrage_rating }}</p>
 {% endblock %}
